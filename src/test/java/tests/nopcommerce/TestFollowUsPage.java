@@ -1,7 +1,7 @@
-package tests.demonopcommerce;
+package tests.nopcommerce;
 
 import base.CommonAPI;
-import pages.dempnopcommerce.FollowUsPage;
+import pages.nopcommerce.FollowUsPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;

@@ -1,9 +1,9 @@
-package tests.demonopcommerce;
+package tests.nopcommerce;
 
 import base.CommonAPI;
 import com.github.javafaker.Faker;
-import pages.dempnopcommerce.ContactUsPage;
-import pages.dempnopcommerce.HomePage;
+import pages.nopcommerce.ContactUsPage;
+import pages.nopcommerce.HomePage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;

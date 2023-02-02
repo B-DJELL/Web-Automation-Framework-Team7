@@ -1,8 +1,8 @@
-package tests.demonopcommerce;
+package tests.nopcommerce;
 
 import base.CommonAPI;
-import pages.dempnopcommerce.AddItemToComparePage;
-import pages.dempnopcommerce.HomePage;
+import pages.nopcommerce.AddItemToComparePage;
+import pages.nopcommerce.HomePage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;

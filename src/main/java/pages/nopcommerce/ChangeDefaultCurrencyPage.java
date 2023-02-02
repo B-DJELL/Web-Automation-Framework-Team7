@@ -1,4 +1,4 @@
-package pages.dempnopcommerce;
+package pages.nopcommerce;
 
 public class ChangeDefaultCurrencyPage {
 }
