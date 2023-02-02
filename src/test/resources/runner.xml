@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="demo.nopcommerce.com test">
+    <parameter name="useCloudEnv" value="false"></parameter>
+
+    <parameter name="envName" value="browserstack"></parameter>
+    <parameter name="os" value="windows"></parameter>
+    <parameter name="osVersion" value="11"></parameter>
+    <parameter name="browserVersion" value="109"></parameter>
+
+    <parameter name="browserName" value="chrome"></parameter>
+    <parameter name="url" value="https://demo.nopcommerce.com/"></parameter>
+    <test name="nopcommerce tests">
+
+
+
+
+        <classes>
+<!--                    <class name="tests.demonopcommerce.TestHomePage"></class>-->
+                <class name="tests.demonopcommerce.TestPurchaseMac"></class>
+<!--                <class name="tests.demonopcommerce.TestRegistration"></class>-->
+<!--                <class name="tests.demonopcommerce.TestLoginPage"></class>-->
+<!--                <class name="tests.demonopcommerce.TestContactUsPage"></class>-->
+<!--                    <class name="tests.demonopcommerce.TestWishList"></class>-->
+<!--                <class name="tests.demonopcommerce.TestAddItemToComparePage"></class>-->
+<!--                    <class name="tests.demonopcommerce.TestSubscribePage"></class>&ndash;&gt;-->
+<!--                    <class name="tests.demonopcommerce.TestFollowUsPage"></class>&ndash;&gt;-->
+        </classes>
+    </test>
+</suite>
