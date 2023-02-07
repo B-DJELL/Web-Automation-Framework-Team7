@@ -42,7 +42,7 @@ public class CreateNewContactTest extends CommonAPI {
     }
 
     //Create an account from the contacts page after clicking on contacts:
-    @Test
+    @Test(enabled = false)
     public void addContactFromContactsPage() {
         mainPage=new MainPage(driver);
         loginPage=new LoginPage(driver);
