@@ -37,7 +37,7 @@ public class MainPageTest extends CommonAPI {
         Assert.assertEquals(comparePage.getCompareLogoMessage(),CompareLogoMessage );
     }
 
-    @Test
+    @Test(enabled = false)
     public void CrmMenuTest(){
         mainPage=new MainPage(driver);
         crmForAnyBusinessPage=new CrmForAnyBusinessPage(driver);

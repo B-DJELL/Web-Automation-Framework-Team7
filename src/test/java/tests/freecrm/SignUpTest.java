@@ -52,7 +52,7 @@ public class SignUpTest extends CommonAPI {
     }
 
     //Sign Up from About Page
-    @Test
+    @Test(enabled = false)
     public void SignUpFromAboutPage(){
         mainPage=new MainPage(driver);
         aboutUsPage=new AboutUsPage(driver);

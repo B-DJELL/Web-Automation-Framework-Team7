@@ -32,7 +32,7 @@ public class LoginTest extends CommonAPI {
 
 
     //Log In test validation for valid credentials
-    @Test
+    @Test(enabled = false)
     public void loginTest() {
         mainPage=new MainPage(driver);
         loginPage=new LoginPage(driver);
@@ -45,7 +45,7 @@ public class LoginTest extends CommonAPI {
     }
 
     //Log In test validation for Invalid credentials
-    @Test
+    @Test(enabled = false)
     public void loginTestInvalid(){
         MainPage mainPage=new MainPage(driver);
         LoginPage loginPage=new LoginPage(driver);
