@@ -5,15 +5,15 @@
     <parameter name="url" value="https://ui.freecrm.com/"></parameter>
     <test name="test">
         <classes>
-<!--            <class name="tests.freecrm.MainPageTest"></class>-->
-<!--            <class name="tests.freecrm.LoginTest"></class>-->
-<!--            <class name="tests.freecrm.LogoutTest"></class>-->
-<!--            <class name="tests.freecrm.SignUpTest"></class>-->
-<!--            <class name="tests.freecrm.CreateNewContactTest"></class>-->
-<!--            <class name="tests.freecrm.CreateNewDealTest"></class>-->
-<!--            <class name="tests.freecrm.DeleteContactTest"></class>-->
-<!--            <class name="tests.freecrm.ManageUsersTest"></class>-->
-<!--            <class name="tests.freecrm.AccountsTest"></class>-->
+            <class name="tests.freecrm.MainPageTest"></class>
+            <class name="tests.freecrm.LoginTest"></class>
+            <class name="tests.freecrm.LogoutTest"></class>
+            <class name="tests.freecrm.SignUpTest"></class>
+            <class name="tests.freecrm.CreateNewContactTest"></class>
+            <class name="tests.freecrm.CreateNewDealTest"></class>
+            <class name="tests.freecrm.DeleteContactTest"></class>
+            <class name="tests.freecrm.ManageUsersTest"></class>
+            <class name="tests.freecrm.AccountsTest"></class>
             <class name="tests.freecrm.ProductsTest"></class>
 
         </classes>
