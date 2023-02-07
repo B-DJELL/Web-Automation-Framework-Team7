@@ -34,7 +34,7 @@ public class CreateNewDealTest extends CommonAPI {
     InputStream ism;
     {
         try {
-            ism = new FileInputStream("D:\\IdealProjects\\Web-Automation-Framework-Team7\\src\\test\\resources\\freecrmconfig.properties");
+            ism = new FileInputStream("src\\test\\resources\\freecrmconfig.properties");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
