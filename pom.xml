@@ -98,6 +98,9 @@
                 <version>2.12.4</version>
                 <configuration>
                     <suiteXmlFiles>
+
+                        <suiteXmlFile>src/test/resources/RunnerNopCommerce.xml</suiteXmlFile>
+=======
                         <suiteXmlFile>D:\IdealProjects\Web-Automation-Framework-Team7\src\test\resources\RunnerFreeCRM.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>

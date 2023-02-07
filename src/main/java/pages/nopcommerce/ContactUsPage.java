@@ -36,6 +36,7 @@ public class ContactUsPage extends CommonAPI {
         sendKeysTxt(emailTxtBox, email);
         sendKeysTxt(enquiryTxtBox, enquiry);
         clickOn(submitBtn);
+        LOG.info("Required fields entred successfully");
     }
     public String getQuerySentMessage(){
         return getTextFromElement(displayedMessage);

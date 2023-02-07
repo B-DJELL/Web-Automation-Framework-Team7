@@ -34,6 +34,9 @@ public class LoginPage extends CommonAPI {
     @FindBy(xpath = "(//button[normalize-space()='Log in'])[1]")
     WebElement LOGIN;
 
+    @FindBy(xpath = "//div[@class='message-error validation-summary-errors']")
+    WebElement LoginErrorMessage;
+
 
     //reusable methods
     public void clickOnLogin(){
@@ -60,7 +63,6 @@ public class LoginPage extends CommonAPI {
         LOG.info("click on LOGIN button success");
     }
 
+    public String  unsuccessfulLogin(){return getTextFromElement(LoginErrorMessage);}
 
-
-    //public String getErrorMessage(){return getTextFromElement(errorMessage);}
 }

@@ -2,14 +2,13 @@ package tests.nopcommerce;
 
 import base.CommonAPI;
 import com.github.javafaker.Faker;
-import pages.nopcommerce.HomePage;
-import pages.nopcommerce.LoginPage;
-import pages.nopcommerce.PurchaseMacPage;
-import pages.nopcommerce.RegistrationPage;
+import pages.nopcommerce.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class TestPurchaseMac extends CommonAPI {
     Logger LOG = LogManager.getLogger(TestPurchaseMac.class.getName());
@@ -17,125 +16,82 @@ public class TestPurchaseMac extends CommonAPI {
     String Password = fakeData.internet().password();
     String emailAddress = fakeData.internet().emailAddress();
     String confirmPassword = Password = fakeData.internet().password();
+    String City = fakeData.address().city();
+    String hommeAdress = fakeData.address().fullAddress();
+    String ZipCode = fakeData.address().zipCode();
+    String PhoneNumber = fakeData.phoneNumber().cellPhone();
+    String Cardholdername = fakeData.name().fullName();
+    String cardNumber = fakeData.finance().creditCard();
+    String cardCode = fakeData.numerify("###");
+
     @Test
-    public void RegistrationValidCred() throws InterruptedException {
-        String actualHomePageTitle = getCurrentTitle();
-        String expectedHomePageTitle = "nopCommerce demo store";
-        LOG.info("actual home page title" + actualHomePageTitle);
-        Assert.assertEquals(actualHomePageTitle, expectedHomePageTitle);
-        LOG.info("land to nopcommerce home page success");
-        Thread.sleep(1000);
-        HomePage homepage = new HomePage(getDriver());
-        homepage.clickOnRegister();
-        Thread.sleep(2000);
-        RegistrationPage registerPage = new RegistrationPage(getDriver());
-        registerPage.chooseGender();
-        Thread.sleep(2000);
-        registerPage.typeFirstName();
-        Thread.sleep(2000);
-        registerPage.typeLastName();
-        Thread.sleep(2000);
-        registerPage.signUpForNewsLetter();
-        Thread.sleep(2000);
-        registerPage.typeEmailAddress(emailAddress);
-        Thread.sleep(2000);
-        registerPage.typePassword(Password);
-        Thread.sleep(2000);
-        registerPage.confirmpassword(confirmPassword);
-        Thread.sleep(2000);
-        registerPage.RegisterAccount();
-        Thread.sleep(1000);
-        registerPage.ClickContinueButtonAfterRegistrationSuccess();
-        Thread.sleep(1000);
-    }
 
-    @Test   (dependsOnMethods = {"RegistrationValidCred"})
-    public void LoginWithValidCredentials () throws InterruptedException {
-        String actualHomePageTitle = getCurrentTitle();
-        String expectedHomePageTitle = "nopCommerce demo store";
-        LOG.info("actual home page title" + actualHomePageTitle);
-        Assert.assertEquals(actualHomePageTitle, expectedHomePageTitle);
-        LOG.info("land to nopcommerce home page success");
-        Thread.sleep(2000);
-        LoginPage loginPage= new LoginPage(getDriver());
-        loginPage.clickOnLogin();
-        Thread.sleep(2000);
-        loginPage.typeEmailAddress(emailAddress);
-        Thread.sleep(1000);
-        loginPage.typePassword(Password);
-        Thread.sleep(1000);
-        loginPage.checkRememberMeButton();
-        Thread.sleep(2000);
-        loginPage.clickOnLOGINButton();
-        Thread.sleep(2000);
-        String loginPageTitle = getCurrentTitle();
-        Assert.assertEquals(loginPageTitle, "nopCommerce demo store");
-        LOG.info("login title page validation success");
-        Thread.sleep(2000);
-
-
-    }
-
-    @Test   (dependsOnMethods = {"LoginWithValidCredentials"})
-
-    public void PurchaseMacBook () throws InterruptedException {
+    public void PurchaseMacBook ()  {
         String actualHomePageTitle = getCurrentTitle();
         String expectedHomePageTitle = "nopCommerce demo store";
         LOG.info("actual home page title"+ actualHomePageTitle);
         Assert.assertEquals(actualHomePageTitle, expectedHomePageTitle);
         LOG.info("land to nopcommerce home page success");
-        Thread.sleep(2000);
-        LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.clickOnLogin();
-        Thread.sleep(2000);
-        loginPage.typeEmailAddress(emailAddress);
-        Thread.sleep(2000);
-        loginPage.typePassword(Password);
-        Thread.sleep(2000);
-        String item = "MacBook";
         HomePage homepage = new HomePage(getDriver());
+        homepage.clickOnRegister();
+        RegistrationPage registerPage = new RegistrationPage(getDriver());
+        registerPage.chooseGender();
+        registerPage.typeFirstName();
+        registerPage.typeLastName();
+        registerPage.signUpForNewsLetter();
+        registerPage.typeEmailAddress(emailAddress);
+        registerPage.typePassword(Password);
+        registerPage.confirmpassword(confirmPassword);
+        registerPage.RegisterAccount();
+        LoginPage loginPage= new LoginPage(getDriver());
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        loginPage.clickOnLogin();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        loginPage.typeEmailAddress(emailAddress);
+        loginPage.typePassword(Password);
+        loginPage.checkRememberMeButton();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        loginPage.clickOnLOGINButton();
+        String item = "MacBook";
         homepage.searchItem(item);
-        Thread.sleep(3000);
-
-        //add to cart
         PurchaseMacPage macpage= new PurchaseMacPage(getDriver());
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         macpage.clickOnAddToCartButton();
-        Thread.sleep(3000);
-
-        //confirm minimum quantity
-         macpage.AddMinimumtoCart();
-
-        Thread.sleep(3000);
-        //click on cart
+        macpage.AddMinimumtoCart();
         HomePage shoppingCart = new HomePage(getDriver());
         shoppingCart.clickOnShoppingCart();
-
-        Thread.sleep(2000);
-        //Agree with terms
         PurchaseMacPage agree = new PurchaseMacPage(getDriver());
         agree.clickOnIagreeButton();
-        Thread.sleep(2000);
-
-        //proceed to checkout
         PurchaseMacPage checkout = new PurchaseMacPage(getDriver());
         checkout.clickOnCheckoutButton();
-        Thread.sleep(5000);
-       ////////////////////////////////////
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        CheckoutPage check= new CheckoutPage(getDriver());
+        check.selectOptionFromMenuDropdown("");
+        check.typeCity(City);
+        check.typeAdress1(hommeAdress);
+        check.typeZipCode(ZipCode);
+        check.typePhoneNUmber(PhoneNumber);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+        check.cLickOnContinueButton();
+        check.checkNextDayAirButton();
+        check.cLickOnShippingContinueButton();
+        check.checkPayByCreditButton();
+        check.clickPayContinueButton();
+        check.selectCardTypeFromMenuDropdown("");
+        check.typeCardHolderName(Cardholdername);
+        check.typeCardNumber(cardNumber);
+        check.typeExpMonth("");
+        check.typeExpYear("");
+        check.typeCardCode(cardCode);
+        check.clickonContinueStepButton();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        check.cLickOnConFirmButton();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        String orderplaced= check.OrdersuccessMessage();
+        Assert.assertEquals(orderplaced, "Your order has been successfully processed!");
+        LOG.info("order has been successfully processed validation success");
 
-//        String loginPageTitle = getCurrentTitle();
-//        Assert.assertEquals(loginPageTitle, "nopCommerce demo store. Login");
-//        LOG.info("login title page validation success");
-//        Thread.sleep(1000);
     }
-
-
-
-
-
-
-
-
-
 
 
 }

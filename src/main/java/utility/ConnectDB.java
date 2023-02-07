@@ -54,7 +54,9 @@ public class ConnectDB {
     }
 
     public static void main(String[] args) throws SQLException {
-        List<String> emails = getTableColumnData("select * from cred;","email");
+        List<String> emails = getTableColumnData("select * from creds;","email");
         System.out.println(emails.get(0));
+        List<String> passwords = getTableColumnData("select * from creds;","Password");
+        System.out.println(passwords.get(0));
     }
 }
