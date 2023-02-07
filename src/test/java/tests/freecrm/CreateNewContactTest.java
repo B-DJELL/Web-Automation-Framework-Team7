@@ -100,6 +100,7 @@ public class CreateNewContactTest extends CommonAPI {
         homePage.addContactAfterHover(driver);
         driver.navigate().refresh();
         driver.navigate().refresh();
+        driver.navigate().refresh();
         createNewContactPage.createNewContact(ftName,ltName);
         createNewContactPage.clickOnSaveBtn();
 
