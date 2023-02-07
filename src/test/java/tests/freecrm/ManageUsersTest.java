@@ -30,6 +30,7 @@ public class ManageUsersTest extends CommonAPI {
     String ltName=newUserManagerPage.randomeString();
     String RandomEmail=faker.internet().emailAddress();
 
+    //Add User Test:
     @Test
     public void addUserTest() throws InterruptedException {
         mainPage = new MainPage(driver);
@@ -80,6 +81,7 @@ public class ManageUsersTest extends CommonAPI {
         Assert.assertEquals(actualTitle, expectedCreateContactPageTitle, "Create a new user failed");
     }
 
+    //Select Permission Test:
     @Test
     public void selectPermission()  {
         mainPage = new MainPage(driver);

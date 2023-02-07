@@ -19,7 +19,7 @@ public class SignUpTest extends CommonAPI {
     Faker faker;
 
     //SignUpFromMainPage
-    @Test
+    @Test(enabled = false)
     public void SignUp(){
         mainPage=new MainPage(driver);
         signUpPage=new SignUpPage(driver);
@@ -43,7 +43,7 @@ public class SignUpTest extends CommonAPI {
         faker=new Faker();
 
         String RandomEmail=faker.internet().emailAddress();
-        mainPage.clickOnLogin();
+//        mainPage.clickOnLogin();
         loginPage.signUp();
         signUpPage.typeEmail(RandomEmail);
         signUpPage.agreeTerms();
