@@ -55,9 +55,9 @@ public class HomePage extends CommonAPI {
     WebElement CurrencyDropDown;
 
     @FindBy(xpath = "//option[contains(text(),'US Dollar')]")
-    WebElement USDOption;
+    WebElement USD;
     @FindBy(xpath = "//option[contains(text(),'Euro')]")
-    WebElement EuroOption;
+    WebElement Euro;
 
     @FindBy(css = ".ico-logout")
     WebElement LogoutButton;
@@ -71,6 +71,19 @@ public class HomePage extends CommonAPI {
     @FindBy(css = "#newsletter-email")
     WebElement emailField;
 
+    @FindBy(xpath = "(//a[normalize-space()='Clothing'])[1]")
+    WebElement ClothingButton;
+
+    @FindBy(xpath = "//div[@class='picture']//img[@title=\"Show details for Levi's 511 Jeans\"]")
+    WebElement LevisJeans;
+    @FindBy(css = "#product_enteredQuantity_30")
+    WebElement  QuantityBox;
+    @FindBy(css = "#price-value-30")
+    WebElement unitprice;
+
+
+
+
 
 
 
@@ -82,64 +95,33 @@ public class HomePage extends CommonAPI {
         log.info("click on register link success");
     }
 
-    public void clkOnLnkLogin() {
-        clickOn(Login);
-        log.info("click on log in link success");
-    }
-
-    public void clkOnLnkWishlist() {
-        clickOn(Wishlist);
-        log.info("click on whishlist link success");
-    }
-
-    public String getWishlistQuantity() {
-        log.info("Whishlist quantity success");
-        return getTextFromElement(wishlistQuantity);
-    }
 
     public void clickOnShoppingCart() {
         clickOn(ShoppingCart);
         log.info("click on shopping cart success");
     }
 
-    public String getShoppingCartQuantity() {
-        log.info("Shopping cart quantity success");
-        return getTextFromElement(shoppingCartQuantity);
-    }
-
-
-
-    public void clickSearchButton() {
-        clickOn(SearchButton);
-        log.info("click on search success");
-    }
-
-//    public Boolean logoNopCommerceIsDisplayed() {
-//        log.info("logo verified");
-//        return elementIsDisplayed(NopCommerceLogo);
-//  }
 
     public void clickOnNopCommerceLogo() {
         clickOn(NopCommerceLogo);
         log.info("click on nopcommerce logo success");
     }
 
-    public void selectCurrency(String option) {
-        selectOptionFromDropdown(CurrencyDropDown, option);
+    public void selectCurrency(String Euro) {
+        selectOptionFromDropdown(CurrencyDropDown, Euro);
         log.info("select currency success");
     }
-    public void clickOnLnkLogout(){
-        clickOn(LogoutButton);
-        log.info("click on logout success");
-    }
+
     public void searchItem(String item){
         typeAndEnter(SearchField, item);
         log.info("item name type and enter success");
     }
-
-    public void ScrollDown(){
-
+    public void TypeQts(){
+        type(QuantityBox, String.valueOf(6));
+        log.info("Quantity entred successfully");
     }
+
+
 
     public void clickOnContactUsButton(){
         clickOn(ContactUsButton);
@@ -158,6 +140,7 @@ public class HomePage extends CommonAPI {
     public void hoverOverFloatingMenu(WebDriver driver){
         hoverOver(driver, Apparel);
         log.info("hover over menu success");
+
     }
     public void clickOnSubscribeButton() {
         clickOn(Subscribe);
@@ -167,14 +150,20 @@ public class HomePage extends CommonAPI {
         type(emailField, TypeEmail);
         log.info("Email entred successfully");
     }
+    public void clickOnclothingButton() {
+        clickOn(ClothingButton);
+        log.info("click on Clothing button success");
+    }
+    public void clickOnLevisLinkButton() {
+        clickOn(LevisJeans);
+        log.info("click on Levis Jeans Link success");
+    }
+
+    public String getactuelPrice(){
+        return getTextFromElement(unitprice);
+    }
 
 
-   // public boolean UsDollarIsSelected (){
-       // return elementIsSelected(USDOption);
-   // }
-    //public boolean EuroIsSelected (){
-       // return elementIsSelected(EuroOption);
-    //}
 
 
 

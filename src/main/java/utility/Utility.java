@@ -24,7 +24,7 @@ public class Utility {
     }
 
     public static void main(String[] args) {
-//        String toEncode = "nacerhadjsaid1";
+//        String toEncode = "QzYCFac2offUm2byppgP";
 //        String encoded = Base64.getEncoder().encodeToString(toEncode.getBytes());
 //        System.out.println(encoded);
 //

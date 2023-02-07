@@ -15,7 +15,7 @@ public class SubscribePage extends CommonAPI {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath= "(//div[@id='newsletter-result-block'])[1]")
+    @FindBy(css= "#newsletter-result-block")
     WebElement resultsNewsLetter;
 
 

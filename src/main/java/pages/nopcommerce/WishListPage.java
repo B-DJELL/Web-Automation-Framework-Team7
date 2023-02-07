@@ -36,10 +36,7 @@ public class WishListPage extends CommonAPI {
 
 // reusable steps
 
-//    public void clickOnApparel() {
-//        clickOn(Apparel);
-//        LOG.info("click on Apparel button success");
-//    }
+
     public void clickOnShoesImage (){
         clickOn(ShoesImage);
         LOG.info("click on Shoes Image  success");
