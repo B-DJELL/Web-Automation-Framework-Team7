@@ -10,7 +10,7 @@ import pages.magento.CreateAccountPage;
 import pages.magento.HomePage;
 
 public class CreateAnAccountTest extends CommonAPI {
-    Logger LOG = LogManager.getLogger(TestSearch.class.getName());
+    Logger LOG = LogManager.getLogger(SearchBar.class.getName());
     Faker fakeData = new Faker();
     String emailAddress = fakeData.internet().emailAddress();
     String password = fakeData.internet().password();

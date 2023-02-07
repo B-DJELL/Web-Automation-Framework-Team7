@@ -24,11 +24,15 @@ public class Utility {
     }
 
     public static void main(String[] args) {
+
 //        String toEncode = "QzYCFac2offUm2byppgP";
+=======
+//        String toEncode = "@ISMAIL";
+
 //        String encoded = Base64.getEncoder().encodeToString(toEncode.getBytes());
 //        System.out.println(encoded);
-//
-//        System.out.println(decode("bmFjZXJoYWRqc2FpZDE="));
+
+//        System.out.println(decode("QElTTUFJTEBsZWdoemFsaUA3"));
 
         String sep = File.separator;
         String path = System.getProperty("user.dir");

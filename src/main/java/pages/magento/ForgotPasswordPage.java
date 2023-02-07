@@ -19,8 +19,8 @@ public class ForgotPasswordPage extends CommonAPI {
     WebElement emailField;
 
 
-    public void emailForRestoringPass() {
-        type(emailField,"roni_cost@example.com");
+    public void emailForRestoringPass(String email) {
+        type(emailField,email);
         LOG.info("email typed successfully");
 
 
