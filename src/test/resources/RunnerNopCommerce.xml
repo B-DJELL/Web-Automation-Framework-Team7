@@ -16,22 +16,22 @@
 
 
         <classes>
-<!--                    <class name="tests.nopcommerce.TestHome"></class>-->
-<!--                    <class name="tests.nopcommerce.TestPurchaseMac"></class>-->
-<!--                    <class name="tests.nopcommerce.TestRegistration"></class>-->
-<!--                    <class name="tests.nopcommerce.TestLogin"></class>-->
-<!--                    <class name="tests.nopcommerce.TestContactUs"></class>-->
-<!--                    <class name="tests.nopcommerce.TestWishList"></class>-->
-<!--                    <class name="tests.nopcommerce.TestAddItemToCompare"></class>-->
-<!--                    <class name="tests.nopcommerce.TestSubscribe"></class>-->
-<!--                    <class name="tests.nopcommerce.TestFollowUs"></class>-->
-<!--                    <class name="tests.nopcommerce.TestLeaveReview"></class>-->
-<!--                    <class name="tests.nopcommerce.TestLogout"></class>-->
-<!--                    <class name="tests.nopcommerce.TestChangeDefaultCurrency"></class>-->
-<!--                    <class name="tests.nopcommerce.TestEmailSelectedITemToFriend"></class>-->
-<!--                    <class name="tests.nopcommerce.TestSearch"></class>-->
-<!--                    <class name="tests.nopcommerce.TestLeaveCommentNews"></class>-->
-<!--                    <class name="tests.nopcommerce.TestApplyForVendor"></class>-->
+                    <class name="tests.nopcommerce.TestHome"></class>
+                    <class name="tests.nopcommerce.TestPurchaseMac"></class>
+                    <class name="tests.nopcommerce.TestRegistration"></class>
+                    <class name="tests.nopcommerce.TestLogin"></class>
+                    <class name="tests.nopcommerce.TestContactUs"></class>
+                    <class name="tests.nopcommerce.TestWishList"></class>
+                    <class name="tests.nopcommerce.TestAddItemToCompare"></class>
+                    <class name="tests.nopcommerce.TestSubscribe"></class>
+                    <class name="tests.nopcommerce.TestFollowUs"></class>
+                    <class name="tests.nopcommerce.TestLeaveReview"></class>
+                    <class name="tests.nopcommerce.TestLogout"></class>
+                    <class name="tests.nopcommerce.TestChangeDefaultCurrency"></class>
+                    <class name="tests.nopcommerce.TestEmailSelectedITemToFriend"></class>
+                    <class name="tests.nopcommerce.TestSearch"></class>
+                    <class name="tests.nopcommerce.TestLeaveCommentNews"></class>
+                    <class name="tests.nopcommerce.TestApplyForVendor"></class>
         </classes>
     </test>
 </suite>
