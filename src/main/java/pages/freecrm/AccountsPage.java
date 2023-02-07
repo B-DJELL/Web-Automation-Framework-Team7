@@ -16,8 +16,26 @@ public class AccountsPage extends CommonAPI {
     @FindBy(xpath = "//input[@name='company_name']")
     WebElement CompanyNameField;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//button[normalize-space()='Save']")
     WebElement SaveButton;
+
+    @FindBy(xpath = "//a[normalize-space()='Outgoing Mail']")
+    WebElement OutgoingMailButton;
+
+    @FindBy(xpath = "//a[normalize-space()='Incoming Mail']")
+    WebElement IncomingMailButton;
+
+    @FindBy(xpath = "//a[normalize-space()='Telephony Account']")
+    WebElement TelephonyAccountButton;
+
+    @FindBy(xpath ="//a[normalize-space()='Telephony Settings']")
+    WebElement TelephonySettingsButton;
+
+    @FindBy(xpath = "//a[normalize-space()='Google Account']")
+    WebElement GoogleAccountButton;
+
+    @FindBy(xpath = "//a[normalize-space()='QuickBooks']")
+    WebElement QuickBooksButton;
 
     public void fillUpCompanyNameField(String CompanyName){
         CompanyNameField.sendKeys(CompanyName);
@@ -26,4 +44,30 @@ public class AccountsPage extends CommonAPI {
     public void clickOnSaveButton(){
         clickOn(SaveButton);
     }
+
+    public void clickOnOutgoingButton(){
+        clickOn(OutgoingMailButton);
+    }
+
+    public void clickOnIncomingMail(){
+        clickOn(IncomingMailButton);
+    }
+
+    public void clickOnTelephonyAccountButton(){
+        clickOn(TelephonyAccountButton);
+    }
+
+    public void clickOnTelephonySettingsButton(){
+        clickOn(TelephonySettingsButton);
+    }
+
+    public void clickOnQuickBooksButton(){
+        clickOn(QuickBooksButton);
+    }
+
+    public void clickOnGoogleAccountButton(){
+        clickOn(GoogleAccountButton);
+    }
+
+
 }

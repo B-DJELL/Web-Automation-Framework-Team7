@@ -16,7 +16,6 @@ public class MainPageTest extends CommonAPI {
     String CrmCloudMessage="CRM Cloud";
 
     //Access to Pricing Page:
-
     @Test(enabled = false)
     public void AccessToPricingPageTest(){
         mainPage=new MainPage(driver);
@@ -27,6 +26,7 @@ public class MainPageTest extends CommonAPI {
         Assert.assertEquals(pricingPage.getPricingLogoMessage(),PricingLogoMessage);
     }
 
+    //Access to Comparing Page:
     @Test(enabled = false)
     public void AccessToComparePageTest(){
         mainPage=new MainPage(driver);
@@ -37,6 +37,7 @@ public class MainPageTest extends CommonAPI {
         Assert.assertEquals(comparePage.getCompareLogoMessage(),CompareLogoMessage );
     }
 
+    //Test on Crm for any business Page from dropdown menu:
     @Test(enabled = false)
     public void CrmMenuTest(){
         mainPage=new MainPage(driver);

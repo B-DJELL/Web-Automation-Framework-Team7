@@ -5,11 +5,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.freecrm.*;
 import utility.ConnectDB;
+import utility.ReadFromExcel;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Properties;
 
 public class CreateNewDealTest extends CommonAPI {
@@ -21,7 +19,17 @@ public class CreateNewDealTest extends CommonAPI {
 
     String expectedCreateDealPageTitle="Cogmento CRM";
 
+    //Read from Excel sheet
+    String path = System.getProperty("user.dir") + File.separator + "data" + File.separator + "freecrm" + File.separator + "testdata.xlsx";
+    ReadFromExcel read = new ReadFromExcel(path, "Yaser");
 
+    String email = read.getDataFromCell(1, 1);
+    String password = read.getDataFromCell(2, 1);
+
+    String PageTitle = "Cogmento CRM";
+    String ErrorMessage = "Something went wrong...";
+
+    //Read from Data Base:
     Properties prop = new Properties();
     InputStream ism;
     {
@@ -33,7 +41,7 @@ public class CreateNewDealTest extends CommonAPI {
     }
 
     //Create a deal from the deals page after clicking on deals button:
-    @Test(enabled = false)
+    @Test
     public void addDealFromDealsPage() {
         mainPage=new MainPage(driver);
         loginPage=new LoginPage(driver);
@@ -46,12 +54,12 @@ public class CreateNewDealTest extends CommonAPI {
             throw new RuntimeException(e);
         }
 
-        String email = ConnectDB.getTableColumnData("select * from cred","v").get(0);
-        String password = ConnectDB.getTableColumnData("select * from cred","v").get(1);
+//        String email = ConnectDB.getTableColumnData("select * from cred","v").get(0);
+//        String password = ConnectDB.getTableColumnData("select * from cred","v").get(1);
 
         String title=createNewDealPage.randomeString();
 
-        mainPage.clickOnLogin();
+//        mainPage.clickOnLogin();
         loginPage.logIn(email,password);
         homePage.clickOnDealsLink(driver);
         dealsPage.clickOnCreateDealButton();
@@ -65,7 +73,7 @@ public class CreateNewDealTest extends CommonAPI {
     }
 
     //Create a Deal from Main Menu (after hovering over the menu logo) :
-    @Test(enabled = true)
+    @Test
     public void addDealFromMenu() {
         mainPage=new MainPage(driver);
         loginPage=new LoginPage(driver);
@@ -79,8 +87,8 @@ public class CreateNewDealTest extends CommonAPI {
             throw new RuntimeException(e);
         }
 
-        String email = ConnectDB.getTableColumnData("select * from cred","v").get(0);
-        String password = ConnectDB.getTableColumnData("select * from cred","v").get(1);
+//        String email = ConnectDB.getTableColumnData("select * from cred","v").get(0);
+//        String password = ConnectDB.getTableColumnData("select * from cred","v").get(1);
 
         String title=createNewDealPage.randomeString();
 
