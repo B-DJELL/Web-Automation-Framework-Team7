@@ -19,8 +19,8 @@ public class HomePage extends CommonAPI {
     @FindBy(xpath = "//*[@id=\"search\"]")
     WebElement searchField;
 
-//    @FindBy(xpath = "//*[@id=\"search_mini_form\"]/div[2]/button")
-//    WebElement searchButton;
+    @FindBy(xpath = "/html/body/div[2]/header/div[2]/a/img")
+    WebElement logo;
 //
     @FindBy(xpath = "//*[@id=\"ui-id-6\"]/span[2]")
     WebElement floatingMenu;
@@ -38,8 +38,13 @@ public class HomePage extends CommonAPI {
     WebElement cartLink;
 
     //reusable steps
-    public void typeItemToSearch(String item){
+    public void typeAndClickItemToSearch(String item){
         typeAndEnter(searchField, item);
+        LOG.info("item name type success");
+    }
+
+    public void itemToSearch(String item){
+        type(searchField, item);
         LOG.info("item name type success");
     }
 //    public void clickOnSearchButton(){
@@ -70,5 +75,9 @@ public class HomePage extends CommonAPI {
     public void clickOnCartLink(){
         clickOn(cartLink);
         LOG.info("click on cart link success");
+    }
+    public void clickOnlogo(){
+        clickOn(logo);
+        LOG.info("click on logo success");
     }
 }

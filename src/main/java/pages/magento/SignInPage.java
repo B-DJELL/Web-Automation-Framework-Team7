@@ -42,6 +42,15 @@ public class SignInPage extends CommonAPI {
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[2]/div[2]/div/div/div")
     WebElement incorrectCred;
 
+    @FindBy(xpath = "/html/body/div[2]/header/div[1]/div/ul/li[1]/span")
+    WebElement welcomeMessage;
+
+    @FindBy(xpath = "//*[@id=\"captcha-container-user_login\"]/div/button")
+    WebElement captchaBtn;
+
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[2]/div[2]/div")
+    WebElement incorrectCredMsg;
+
 
 
     //REUSABLE STEPS
@@ -56,12 +65,28 @@ public class SignInPage extends CommonAPI {
 //    }
 
     public void typeEmailAddress(String emailAddress) throws InterruptedException {
-        type(emailField,emailAddress);
+       type(emailField,emailAddress);
+//        type(emailField,);
+        LOG.info("typing email success");
+    }
+//    public void validEmailAddress() throws InterruptedException {
+////       type(emailField,emailAddress);
+//        type(emailField,"leghzali@gmail.com");
+//        LOG.info("typing email success");
+//    }
+
+    public void wrongCredEmail() throws InterruptedException {
+        type(emailField,"leghzal@gmail.com");
+        LOG.info("typing email success");
+    }
+    public void fakeEmail() throws InterruptedException {
+        type(emailField,"ismail@gmail.com");
         LOG.info("typing email success");
     }
 
     public void password(String password) throws InterruptedException {
-        type(passwordField,password);
+//        type(passwordField,password);
+        type(passwordField,"@ISMAIL@leghzali@");
         LOG.info("typing password success");
     }
 
@@ -84,6 +109,10 @@ public class SignInPage extends CommonAPI {
        type(emailToResetPassword,"roni_cost@example.com");
         LOG.info("writing email success");
     }
+    public void captchaReload() throws InterruptedException {
+        clickOn(captchaBtn);
+        LOG.info("click captcha reload button success");
+    }
 
     public String getRequiredField() {
         return getTextFromElement(requiredField);
@@ -91,6 +120,14 @@ public class SignInPage extends CommonAPI {
 
     public String incorrectCred() {
         return getTextFromElement(incorrectCred);
+    }
+
+    public String incorrectCredMsg() {
+        return getTextFromElement(incorrectCredMsg);
+    }
+
+    public String welcomeMessage() {
+        return getTextFromElement(welcomeMessage);
     }
 }
 

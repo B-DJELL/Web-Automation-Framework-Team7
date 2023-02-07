@@ -11,7 +11,7 @@ import pages.magento.SignInPage;
 import pages.magento.SignOutPage;
 
 public class SignOut extends CommonAPI {
-    Logger LOG = LogManager.getLogger(TestSearch.class.getName());
+    Logger LOG = LogManager.getLogger(SearchBar.class.getName());
     Faker fakeData = new Faker();
     String emailAddress = fakeData.internet().emailAddress();
     String password = fakeData.internet().password();
