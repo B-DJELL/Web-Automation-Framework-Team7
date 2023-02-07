@@ -16,11 +16,14 @@
             <class name="tests.magento.CreateAnAccountTest"></class>
             <class name="tests.magento.SignIn"></class>
             <class name="tests.magento.ForgotPassword"></class>
-            <class name="tests.magento.TestSearch"></class>
+            <class name="tests.magento.SearchBar"></class>
             <class name="tests.magento.PurchaseTest"></class>
             <class name="tests.magento.AddToCart"></class>
-<!--            <class name="test.MyAccountTest"></class>-->
-<!--            <class name="test.SignOut"></class>-->
+            <class name="tests.magento.MyAccountTest"></class>
+            <class name="tests.magento.SignOut"></class>
+            <class name="tests.magento.ShoppingCart"></class>
+            <class name="tests.magento.Checkout"></class>
+            <class name="tests.magento.TestSignInWithDB"></class>
 
         </classes>
     </test>

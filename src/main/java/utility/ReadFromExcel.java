@@ -4,7 +4,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +66,10 @@ public class ReadFromExcel {
     }
 
     public static void main(String[] args) throws IOException {
-        ReadFromExcel read = new ReadFromExcel("C:\\Users\\BHD\\Web-Automation-Framework-Team7", "test data");
-        read.getCellValueForGivenHeaderAndKey("key","home page title");
+        ReadFromExcel readFromExcel = new ReadFromExcel("C:\\Users\\BHD\\Web-Automation-Framework-Team7\\data\\titles.xlsx", "Bhd");
+
+        readFromExcel.getCellValueForGivenHeaderAndKey("key","email");
+        readFromExcel.getCellValueForGivenHeaderAndKey("key","password");
+
     }
 }

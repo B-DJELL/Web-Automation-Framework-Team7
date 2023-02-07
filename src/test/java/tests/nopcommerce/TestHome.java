@@ -9,21 +9,19 @@ import org.testng.annotations.Test;
 
 
 
-public class TestHomePage extends CommonAPI {
-    Logger log = LogManager.getLogger(TestHomePage.class.getName());
+public class TestHome extends CommonAPI {
+    Logger log = LogManager.getLogger(TestHome.class.getName());
 
     @Test
     public void returnToHomePageClickingOnWebsiteLogoImageTest () throws InterruptedException {
 
         HomePage homePage = new HomePage(getDriver());
-        Thread.sleep(3000);
+
         homePage.clickOnRegister();
         String actualTitle = getCurrentTitle();
         Assert.assertEquals(actualTitle, "nopCommerce demo store. Register");
         log.info("land on registration page validation success");
-        Thread.sleep(3000);
         homePage.clickOnNopCommerceLogo();
-        Thread.sleep(3000);
         String homePageTitle = getCurrentTitle();
         Assert.assertEquals(homePageTitle, "nopCommerce demo store");
         log.info("Returning to homme page validation success");

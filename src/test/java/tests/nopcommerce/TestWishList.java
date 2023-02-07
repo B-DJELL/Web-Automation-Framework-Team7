@@ -25,23 +25,27 @@ public class TestWishList extends CommonAPI {
     LOG.info("land to nopcommerce home page success");
     HomePage ApparelButton = new HomePage(getDriver());
     ApparelButton.clickOnApparel();
-    Thread.sleep(2000);
+    Thread.sleep(1000);
     WishListPage wishList= new WishListPage(getDriver());
     wishList.clickOnShoesImage();
-    Thread.sleep(2000);
+    Thread.sleep(1000);
     wishList.chooseColor();
-    Thread.sleep(3000);
+    Thread.sleep(1000);
     wishList.AddItemToWishList();
-    Thread.sleep(3000);
+    Thread.sleep(1000);
     wishList.checkWishList();
-    Thread.sleep(3000);
+    Thread.sleep(1000);
     LOG.info("Item Added to Wish List Successfully");
-    Thread.sleep(3000);
+    Thread.sleep(1000);
     wishList.ReturnToHomePage();
+    String returnHomePageTitle = getCurrentTitle();
+    String expectHomePageTitle = "nopCommerce demo store";
+    LOG.info("actual home page title" + returnHomePageTitle);
+    Assert.assertEquals(actualHomePageTitle, expectHomePageTitle);
     LOG.info("land to nopcommerce home page success");
-    Thread.sleep(3000);
 
     }
+
 }
 
 

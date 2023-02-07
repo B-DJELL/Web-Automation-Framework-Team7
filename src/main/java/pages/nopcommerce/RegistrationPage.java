@@ -47,6 +47,11 @@ public class RegistrationPage extends CommonAPI {
     @FindBy(css = ".button-1.register-continue-button")
     WebElement ContinueButton;
 
+    @FindBy (xpath = "//span[@id='ConfirmPassword-error']")
+    WebElement ConfirmPasswordError;
+
+
+
 //REUSABLE STEPS
 
 
@@ -72,10 +77,7 @@ public class RegistrationPage extends CommonAPI {
         type(email, emailAddress);
         LOG.info("type email address success");
     }
-//    public void email(){
-//        type(email,"tester13@gmail.com");
-//        LOG.info("writing email success");
-//    }
+
 
     public void signUpForNewsLetter(){
         clickOn(signUpForNewsLetter);
@@ -89,10 +91,6 @@ public class RegistrationPage extends CommonAPI {
     }
 
 
-//    public void typePassword(){
-//        type(password,"141414");
-//        LOG.info("password typed successfully");
-//    }
 
     public void confirmpassword(String confipass){
         type(passwordconfirmation, confipass );
@@ -105,6 +103,14 @@ public class RegistrationPage extends CommonAPI {
     public void ClickContinueButtonAfterRegistrationSuccess(){
         clickOn(ContinueButton);
         LOG.info("landing to home page success");
+    }
+    public void InvalidPasswordConfirmation(String confirmpass){
+        type(passwordconfirmation, confirmpass );
+        LOG.info("password confirmation typed successfully");
+    }
+
+    public String getPasswordDoNotMatchMessage(){
+        return getTextFromElement(ConfirmPasswordError);
     }
 
 }

@@ -8,17 +8,18 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.magento.HomePage;
 import pages.magento.SignInPage;
+import utility.ConnectDB;
 
 public class SignIn extends CommonAPI {
 
-    Logger LOG = LogManager.getLogger(TestSearch.class.getName());
+    Logger LOG = LogManager.getLogger(SearchBar.class.getName());
     Faker fakeData = new Faker();
     String emailAddress = fakeData.internet().emailAddress();
     String password = fakeData.internet().password();
-//    String fullName = fakeData.name().fullName();
-//    String email = fakeData.internet().emailAddress();
-    @Test
-    public void signIn() throws InterruptedException {
+
+    @Test // sign in with correct credentials
+
+    public void a_signIn() throws InterruptedException {
         HomePage homePage= new HomePage(getDriver());
         SignInPage signInPage = new SignInPage(getDriver());
 
@@ -30,41 +31,95 @@ public class SignIn extends CommonAPI {
             LOG.info("land to home page success");
 
             homePage.clickOnSignInButton();
-//            Thread.sleep(3000);
-
-//            signInPage.typeEmailAddress();
-        signInPage.typeEmailAddress(emailAddress);
-//            Thread.sleep(3000);
-
-//            signInPage.password();
-        signInPage.password(password);
-            Thread.sleep(3000);
-
-            signInPage.SignInButton2();
-            Thread.sleep(6000);
-
-
-        }
-        @Test
-    public void failedSignIn () throws InterruptedException {
-            HomePage homePage= new HomePage(getDriver());
-            SignInPage signInPage = new SignInPage(getDriver());
-            String title = getCurrentTitle();
-            Assert.assertEquals(title,"Home Page - Magento eCommerce - website to practice selenium | demo website for automation testing" +
-                    " | selenium practice sites | selenium demo sites | best website to practice selenium automation | automation practice sites " +
-                    "Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
-            LOG.info("land to home page2 success");
-            homePage.clickOnSignInButton();
             signInPage.typeEmailAddress(emailAddress);
             signInPage.password(password);
-            Thread.sleep(3000);
-
             signInPage.SignInButton2();
-            Thread.sleep(6000);
-            String errorMessage = signInPage.incorrectCred();
-            Assert.assertEquals(errorMessage,"The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.");
-            LOG.info("error message shows up");
-            Thread.sleep(4000);
+
+
+
+        String welcomeMessage = "Welcome, ismail leghzali! Change";
+        Assert.assertEquals(welcomeMessage,"Welcome, ismail leghzali! Change");
+        LOG.info("welcome user");
+
 
         }
+
+    @Test // sign in by reading from data base
+
+    public void signInWithDB() throws InterruptedException {
+        HomePage homePage= new HomePage(getDriver());
+        SignInPage signInPage = new SignInPage(getDriver());
+
+
+        String title = getCurrentTitle();
+        Assert.assertEquals(title,"Home Page - Magento eCommerce - website to practice selenium | demo website for automation testing" +
+                " | selenium practice sites | selenium demo sites | best website to practice selenium automation | automation practice sites " +
+                "Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
+        LOG.info("land to home page success");
+
+        homePage.clickOnSignInButton();
+        String email = ConnectDB.getTableColumnData("select * from customer","CustomerEmail").get(0);
+        signInPage.typeEmailAddress(email);
+        String password = ConnectDB.getTableColumnData("select * from customer","CustomerPassword").get(0);
+        signInPage.password(password);
+        signInPage.SignInButton2();
+        String welcomeMessage = "Welcome, ismail leghzali! Change";
+        Assert.assertEquals(welcomeMessage,"Welcome, ismail leghzali! Change");
+        LOG.info("welcome user");
+
+
+    }
+
+
+    @Test   //Testing wrong credentials
+    public void b_wrongCredentials () throws InterruptedException {
+        HomePage homePage = new HomePage(getDriver());
+        SignInPage signInPage = new SignInPage(getDriver());
+        LOG.info("land to home page success");
+
+        homePage.clickOnSignInButton();
+
+        signInPage.wrongCredEmail();
+        signInPage.password(password);
+        signInPage.SignInButton2();
+        Thread.sleep(3000);
+
+
+        String errorMessage = signInPage.incorrectCred();
+        Assert.assertEquals(errorMessage, "Incorrect CAPTCHA");
+        LOG.info("error message shows up");
+
+    }
+    @Test  // testing captcha functions
+    public void captcha () throws InterruptedException {
+        HomePage homePage=new HomePage(getDriver());
+        SignInPage signInPage=new SignInPage(getDriver());
+
+        //sign in with a fake email
+        homePage.clickOnSignInButton();
+        signInPage.fakeEmail();
+        signInPage.password(password);
+        signInPage.SignInButton2();
+        Thread.sleep(3000);
+
+        String errorMessage = signInPage.incorrectCred();
+        Assert.assertEquals(errorMessage, "Incorrect CAPTCHA");
+        LOG.info("error message shows up");
+
+        //correct credentials after asking for captcha
+        signInPage.typeEmailAddress(emailAddress);
+        signInPage.password(password);
+        signInPage.captchaReload();
+        signInPage.SignInButton2();
+        Thread.sleep(4000);
+
+        String welcomeMessage = "Welcome, ismail leghzali! Change";
+        Assert.assertEquals(welcomeMessage,"Welcome, ismail leghzali! Change");
+        LOG.info("welcome user");
+
+
+
+    }
+
+
 }

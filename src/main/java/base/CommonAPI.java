@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -103,8 +104,9 @@ public class CommonAPI {
         return calendar.getTime();
     }
     public void getLocalDriver(String browserName){
+        ChromeOptions options = new ChromeOptions();
         if (browserName.equalsIgnoreCase("chrome")){
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options.setHeadless(false));
         }else if (browserName.equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
         } else if (browserName.equalsIgnoreCase("edge")) {
