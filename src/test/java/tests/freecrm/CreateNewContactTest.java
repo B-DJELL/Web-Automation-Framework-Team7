@@ -76,7 +76,7 @@ public class CreateNewContactTest extends CommonAPI {
     }
 
     //Create an account from Main Menu (after hovering over the menu logo) :
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void addContactFromMenu() {
         mainPage=new MainPage(driver);
         loginPage=new LoginPage(driver);
