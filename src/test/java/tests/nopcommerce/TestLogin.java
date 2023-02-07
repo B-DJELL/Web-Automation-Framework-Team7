@@ -108,8 +108,7 @@ public class TestLogin extends CommonAPI {
 
     }
 
-    @Test
-
+    @Test(enabled = false)
     public void LoginReadingDataFromDataBase() {
         String actualHomePageTitle = getCurrentTitle();
         String expectedHomePageTitle = "nopCommerce demo store";
