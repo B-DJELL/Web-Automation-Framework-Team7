@@ -29,7 +29,7 @@ public class HomePage extends CommonAPI {
 	@FindBy(xpath = "//i[@class='tasks icon']")
 	WebElement tasksLink;
 
-	@FindBy(xpath = "//div[@id='main-nav']//div[3]//button[1]//i[1]")
+	@FindBy(xpath = "//body[1]/div[1]/div[1]/div[1]/div[3]/button[1]/i[1]")
 	WebElement addContact;
 
 	@FindBy(xpath = "//div[5]//button[1]//i[1]")
