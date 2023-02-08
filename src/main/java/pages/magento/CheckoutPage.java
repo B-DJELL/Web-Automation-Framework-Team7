@@ -37,7 +37,7 @@ import org.openqa.selenium.support.PageFactory;
         @FindBy(xpath = "//*[@id=\"customer-password\"]")
         WebElement password;
 
-        @FindBy(xpath = "//*[@id=\"firstname\"]")
+        @FindBy(xpath = "//input[@id='FKT0CNT']")
         WebElement firstName;
 
         @FindBy(xpath = "//*[@id=\"D8RGS3Q\"]")
@@ -57,12 +57,18 @@ import org.openqa.selenium.support.PageFactory;
 
         @FindBy(xpath = "//*[@id=\"customer-email-fieldset\"]/fieldset/div[2]/div[1]/button")
         WebElement loginB;
-//        @FindBy(xpath = "")
-//        WebElement a;
-//        @FindBy(xpath = "")
-//        WebElement a;
-//        @FindBy(xpath = "")
-//        WebElement a;
+
+        @FindBy(xpath = "//*[@id=\"checkout-shipping-method-load\"]/table/tbody/tr[1]/td[1]/input")
+        WebElement radioBtn;
+
+        @FindBy(xpath = "//*[@id=\"shipping-method-buttons-container\"]/div/button")
+        WebElement nextBtn;
+
+        @FindBy(xpath = "//*[@id=\"checkout-payment-method-load\"]/div/div/div[2]/div[2]/div[4]/div/button")
+        WebElement placeOrder;
+
+        @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div/div[2]/div/div/a/span")
+        WebElement continueShop;
 
 
 
@@ -124,6 +130,23 @@ import org.openqa.selenium.support.PageFactory;
             clickOn(loginB);
             LOG.info("log success");
         }
+        public void shippingMethod() {
+            clickOn(radioBtn);
+            LOG.info("click radio button success");
+        }
+        public void clickNext() {
+            clickOn(nextBtn);
+            LOG.info("click next button success");
+        }
+        public void clickPlaceOrder() {
+            clickOn(placeOrder);
+            LOG.info("click replace order button success");
+        }
+        public void clickContinueShopping() {
+            clickOn(continueShop);
+            LOG.info("click continue shopping button success");
+        }
+
     }
 
 
