@@ -27,7 +27,7 @@ public class AccountsTest extends CommonAPI {
     String expectedCreateContactPageTitle="Cogmento CRM";
 
     @Test
-    public void accountManageTest(){
+    public void accountManageTest() throws InterruptedException {
         mainPage = new MainPage(driver);
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
@@ -46,4 +46,123 @@ public class AccountsTest extends CommonAPI {
         Assert.assertEquals(actualTitle, expectedCreateContactPageTitle, "Create account failed");
     }
 
+    //Outgoing
+    @Test
+    public void OutgoingMailTest() throws InterruptedException {
+        mainPage = new MainPage(driver);
+        loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
+        accountSettingsPage = new AccountSettingsPage(driver);
+        accountsPage=new AccountsPage(driver);
+
+        //mainPage.clickOnLogin();
+        loginPage.logIn(email, password);
+        homePage.clickOnSettingsIcon();
+        homePage.clickOnSubSettingIcon();
+        accountSettingsPage.clickOnAccountButton();
+        accountsPage.clickOnOutgoingButton();
+
+        String actualTitle = getCurrentTitle();
+        Assert.assertEquals(actualTitle, expectedCreateContactPageTitle, "Create account failed");
+    }
+
+    //IncomingMailTest
+    @Test
+    public void IncomingMailTest() {
+        mainPage = new MainPage(driver);
+        loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
+        accountSettingsPage = new AccountSettingsPage(driver);
+        accountsPage=new AccountsPage(driver);
+
+        //mainPage.clickOnLogin();
+        loginPage.logIn(email, password);
+        homePage.clickOnSettingsIcon();
+        homePage.clickOnSubSettingIcon();
+        accountSettingsPage.clickOnAccountButton();
+        accountsPage.clickOnIncomingMail();
+
+        String actualTitle = getCurrentTitle();
+        Assert.assertEquals(actualTitle, expectedCreateContactPageTitle, "Create account failed");
+    }
+
+    //TelephonySettingsButtonTest
+    @Test
+    public void TelephonySettingsButtonTest() {
+        mainPage = new MainPage(driver);
+        loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
+        accountSettingsPage = new AccountSettingsPage(driver);
+        accountsPage=new AccountsPage(driver);
+
+        //mainPage.clickOnLogin();
+        loginPage.logIn(email, password);
+        homePage.clickOnSettingsIcon();
+        homePage.clickOnSubSettingIcon();
+        accountSettingsPage.clickOnAccountButton();
+        accountsPage.clickOnTelephonySettingsButton();
+
+        String actualTitle = getCurrentTitle();
+        Assert.assertEquals(actualTitle, expectedCreateContactPageTitle, "Create account failed");
+    }
+
+    //TelephonyAccountTest
+    @Test
+    public void TelephonyAccountTest()  {
+        mainPage = new MainPage(driver);
+        loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
+        accountSettingsPage = new AccountSettingsPage(driver);
+        accountsPage=new AccountsPage(driver);
+
+        //mainPage.clickOnLogin();
+        loginPage.logIn(email, password);
+        homePage.clickOnSettingsIcon();
+        homePage.clickOnSubSettingIcon();
+        accountSettingsPage.clickOnAccountButton();
+        accountsPage.clickOnTelephonyAccountButton();
+
+        String actualTitle = getCurrentTitle();
+        Assert.assertEquals(actualTitle, expectedCreateContactPageTitle, "Create account failed");
+    }
+
+    //GoogleAccountTest
+    @Test
+    public void GoogleAccountTest()  {
+        mainPage = new MainPage(driver);
+        loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
+        accountSettingsPage = new AccountSettingsPage(driver);
+        accountsPage=new AccountsPage(driver);
+
+        //mainPage.clickOnLogin();
+        loginPage.logIn(email, password);
+        homePage.clickOnSettingsIcon();
+        homePage.clickOnSubSettingIcon();
+        accountSettingsPage.clickOnAccountButton();
+        accountsPage.clickOnGoogleAccountButton();
+
+        String actualTitle = getCurrentTitle();
+        Assert.assertEquals(actualTitle, expectedCreateContactPageTitle, "Create account failed");
+    }
+
+    //QuickBooksButtonTest
+    @Test
+    public void QuickBooksButtonTest()  {
+        mainPage = new MainPage(driver);
+        loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
+        accountSettingsPage = new AccountSettingsPage(driver);
+        accountsPage=new AccountsPage(driver);
+
+        //mainPage.clickOnLogin();
+        loginPage.logIn(email, password);
+        homePage.clickOnSettingsIcon();
+        homePage.clickOnSubSettingIcon();
+        accountSettingsPage.clickOnAccountButton();
+        accountsPage.clickOnQuickBooksButton();
+
+        String actualTitle = getCurrentTitle();
+        Assert.assertEquals(actualTitle, expectedCreateContactPageTitle, "Create account failed");
+    }
 }

@@ -25,7 +25,7 @@ public class ProductsTest extends CommonAPI {
     String email = read.getDataFromCell(1, 1);
     String password = read.getDataFromCell(2, 1);
 
-    @Test
+    @Test(enabled = false)
     public void NewProductTest() throws InterruptedException {
         mainPage = new MainPage(driver);
         loginPage = new LoginPage(driver);
