@@ -18,23 +18,20 @@ public class CreateNewDealTest extends CommonAPI {
     CreateNewDealPage createNewDealPage;
 
     String expectedCreateDealPageTitle="Cogmento CRM";
-
-    //Read from Excel sheet
-    String path = System.getProperty("user.dir") + File.separator + "data" + File.separator + "freecrm" + File.separator + "testdata.xlsx";
-    ReadFromExcel read = new ReadFromExcel(path, "Yaser");
-
-    String email = read.getDataFromCell(1, 1);
-    String password = read.getDataFromCell(2, 1);
-
-    String PageTitle = "Cogmento CRM";
-    String ErrorMessage = "Something went wrong...";
+    String ErrorMessage = "Something went wrong,Create a deal from the contacts page after clicking on contacts failed";
+    String ErrorMessage2= "Create a Deal from Main Menu (after hovering over the menu logo) failed";
+//    //Read from Excel sheet
+//    String path = System.getProperty("user.dir") + File.separator + "data" + File.separator + "freecrm" + File.separator + "testdata.xlsx";
+//    ReadFromExcel read = new ReadFromExcel(path, "Yaser");
+//    String email = read.getDataFromCell(1, 1);
+//    String password = read.getDataFromCell(2, 1);
 
     //Read from Data Base:
     Properties prop = new Properties();
     InputStream ism;
     {
         try {
-            ism = new FileInputStream("src\\test\\resources\\freecrmconfig.properties");
+            ism = new FileInputStream("config.properties");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -54,8 +51,8 @@ public class CreateNewDealTest extends CommonAPI {
             throw new RuntimeException(e);
         }
 
-//        String email = ConnectDB.getTableColumnData("select * from cred","v").get(0);
-//        String password = ConnectDB.getTableColumnData("select * from cred","v").get(1);
+        String email = ConnectDB.getTableColumnData("select * from cred","v").get(0);
+        String password = ConnectDB.getTableColumnData("select * from cred","v").get(1);
 
         String title=createNewDealPage.randomeString();
 
@@ -69,7 +66,7 @@ public class CreateNewDealTest extends CommonAPI {
         createNewDealPage.clickOnSaveBtn();
 
         String actualTitle = getCurrentTitle();
-        Assert.assertEquals(actualTitle, expectedCreateDealPageTitle, "Create a deal from the contacts page after clicking on contacts failed");
+        Assert.assertEquals(actualTitle, expectedCreateDealPageTitle, ErrorMessage);
     }
 
     //Create a Deal from Main Menu (after hovering over the menu logo) :
@@ -87,8 +84,8 @@ public class CreateNewDealTest extends CommonAPI {
             throw new RuntimeException(e);
         }
 
-//        String email = ConnectDB.getTableColumnData("select * from cred","v").get(0);
-//        String password = ConnectDB.getTableColumnData("select * from cred","v").get(1);
+        String email = ConnectDB.getTableColumnData("select * from cred","v").get(0);
+        String password = ConnectDB.getTableColumnData("select * from cred","v").get(1);
 
         String title=createNewDealPage.randomeString();
 
@@ -101,7 +98,7 @@ public class CreateNewDealTest extends CommonAPI {
         createNewDealPage.clickOnSaveBtn();
 
         String actualTitle = getCurrentTitle();
-        Assert.assertEquals(actualTitle, expectedCreateDealPageTitle, "Create a Deal from Main Menu (after hovering over the menu logo) failed");
+        Assert.assertEquals(actualTitle, expectedCreateDealPageTitle, ErrorMessage2);
     }
 
 }

@@ -146,6 +146,26 @@ public class AccountsTest extends CommonAPI {
         Assert.assertEquals(actualTitle, expectedCreateContactPageTitle, "Create account failed");
     }
 
+    //FacebookAccountTest
+    @Test
+    public void FacebookAccountTest()  {
+        mainPage = new MainPage(driver);
+        loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
+        accountSettingsPage = new AccountSettingsPage(driver);
+        accountsPage=new AccountsPage(driver);
+
+        //mainPage.clickOnLogin();
+        loginPage.logIn(email, password);
+        homePage.clickOnSettingsIcon();
+        homePage.clickOnSubSettingIcon();
+        accountSettingsPage.clickOnAccountButton();
+        accountsPage.clickOnFacebookAccountButton();
+
+        String actualTitle = getCurrentTitle();
+        Assert.assertEquals(actualTitle, expectedCreateContactPageTitle, "Create account failed");
+    }
+
     //QuickBooksButtonTest
     @Test
     public void QuickBooksButtonTest()  {

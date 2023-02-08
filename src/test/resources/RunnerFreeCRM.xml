@@ -21,7 +21,6 @@
             <class name="tests.freecrm.ProductsTest"></class>
             <class name="tests.freecrm.AccountsTest"></class>
 
-
             <!--            <class name="tests.freecrm.MainPageTest"></class>-->
 
         </classes>
