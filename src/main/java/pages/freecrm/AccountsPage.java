@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 public class AccountsPage extends CommonAPI {
     public AccountsPage(WebDriver driver) {
         PageFactory.initElements(driver, this);}
-    Logger log = LogManager.getLogger(HomePage.class.getName());
+    Logger log = LogManager.getLogger(AccountsPage.class.getName());
 
     @FindBy(xpath = "//input[@name='company_name']")
     WebElement CompanyNameField;

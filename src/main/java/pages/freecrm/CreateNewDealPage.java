@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 public class CreateNewDealPage extends CommonAPI {
     public CreateNewDealPage(WebDriver driver) {
         PageFactory.initElements(driver, this);}
-    Logger log = LogManager.getLogger(HomePage.class.getName());
+    Logger log = LogManager.getLogger(CreateNewDealPage.class.getName());
 
     @FindBy(xpath = "//input[@name='title']")
     WebElement titleField;

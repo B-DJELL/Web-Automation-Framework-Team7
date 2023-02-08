@@ -12,7 +12,7 @@ public class AboutUsPage extends CommonAPI {
     public AboutUsPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-    Logger log = LogManager.getLogger(MainPage.class.getName());
+    Logger log = LogManager.getLogger(AboutUsPage.class.getName());
 
     @FindBy(xpath = "//a[text()='Sign Up']")
     WebElement SignUpBtn;

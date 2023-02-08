@@ -13,7 +13,7 @@ import org.openqa.selenium.support.PageFactory;
 public class NewUserManagerPage extends CommonAPI {
     public NewUserManagerPage(WebDriver driver) {
         PageFactory.initElements(driver, this);}
-    Logger log = LogManager.getLogger(HomePage.class.getName());
+    Logger log = LogManager.getLogger(NewUserManagerPage.class.getName());
 
     @FindBy(xpath ="//input[@placeholder='First Name']")
     WebElement firstName;

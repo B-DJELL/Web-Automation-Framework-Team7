@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CreateNewContactPage extends CommonAPI {
     public CreateNewContactPage(WebDriver driver) {PageFactory.initElements(driver, this);}
-    Logger log = LogManager.getLogger(HomePage.class.getName());
+    Logger log = LogManager.getLogger(CreateNewContactPage.class.getName());
 
     @FindBy(xpath ="//input[@name='first_name']")
     WebElement firstName;

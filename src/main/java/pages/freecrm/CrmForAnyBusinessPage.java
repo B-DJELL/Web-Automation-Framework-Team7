@@ -13,7 +13,7 @@ public class CrmForAnyBusinessPage extends CommonAPI {
     public CrmForAnyBusinessPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-    Logger log = LogManager.getLogger(MainPage.class.getName());
+    Logger log = LogManager.getLogger(CrmForAnyBusinessPage.class.getName());
 
     @FindBy(xpath = "//h1[normalize-space()='CRM Cloud']")
     WebElement CrmCloudLogo;

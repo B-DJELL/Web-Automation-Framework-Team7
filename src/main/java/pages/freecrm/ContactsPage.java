@@ -16,7 +16,7 @@ import java.time.Duration;
 
 public class ContactsPage extends CommonAPI {
 	public ContactsPage(WebDriver driver) {PageFactory.initElements(driver, this);}
-	Logger log = LogManager.getLogger(HomePage.class.getName());
+	Logger log = LogManager.getLogger(ContactsPage.class.getName());
 
 	@FindBy(xpath = "//span[@class='selectable ']")
 	WebElement contactsLabel;

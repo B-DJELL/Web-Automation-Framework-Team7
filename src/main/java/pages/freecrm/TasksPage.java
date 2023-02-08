@@ -9,6 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 public class TasksPage extends CommonAPI {
     public TasksPage(WebDriver driver) {
         PageFactory.initElements(driver, this);}
-    Logger log = LogManager.getLogger(MainPage.class.getName());
+    Logger log = LogManager.getLogger(TasksPage.class.getName());
 
 }

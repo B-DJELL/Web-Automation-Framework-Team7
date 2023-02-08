@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class UserManagerPage extends CommonAPI {
     public UserManagerPage(WebDriver driver) {PageFactory.initElements(driver, this);}
-    Logger log = LogManager.getLogger(HomePage.class.getName());
+    Logger log = LogManager.getLogger(UserManagerPage.class.getName());
 
     @FindBy (xpath = "//div[@class='ui button']")
     WebElement addUserButton;

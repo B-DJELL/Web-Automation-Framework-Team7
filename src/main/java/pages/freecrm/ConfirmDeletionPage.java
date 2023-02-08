@@ -12,7 +12,7 @@ public class ConfirmDeletionPage extends CommonAPI {
     public ConfirmDeletionPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-    Logger log = LogManager.getLogger(HomePage.class.getName());
+    Logger log = LogManager.getLogger(ConfirmDeletionPage.class.getName());
 
     @FindBy(xpath ="//button[normalize-space()='Delete']")
     WebElement DeleteButton;

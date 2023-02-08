@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 public class DealsPage  extends CommonAPI {
     public DealsPage(WebDriver driver) {
         PageFactory.initElements(driver, this);}
-    Logger log = LogManager.getLogger(MainPage.class.getName());
+    Logger log = LogManager.getLogger(DealsPage.class.getName());
 
     @FindBy(xpath = "//span[@class='selectable ']")
     WebElement dealsLabel;

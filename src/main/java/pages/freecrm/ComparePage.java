@@ -12,7 +12,7 @@ public class ComparePage extends CommonAPI {
     public ComparePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-    Logger log = LogManager.getLogger(HomePage.class.getName());
+    Logger log = LogManager.getLogger(ComparePage.class.getName());
 
     @FindBy(xpath = "//h1[normalize-space()='Free CRM Comparison']")
     WebElement CompareLogoMessage;

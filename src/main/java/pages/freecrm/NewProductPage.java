@@ -13,7 +13,7 @@ public class NewProductPage extends CommonAPI {
     public NewProductPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-    Logger log = LogManager.getLogger(HomePage.class.getName());
+    Logger log = LogManager.getLogger(NewProductPage.class.getName());
 
     @FindBy(xpath = "//input[@name='name']")
     WebElement Name;

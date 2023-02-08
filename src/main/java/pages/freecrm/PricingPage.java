@@ -12,7 +12,7 @@ public class PricingPage extends CommonAPI {
     public PricingPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-    Logger log = LogManager.getLogger(HomePage.class.getName());
+    Logger log = LogManager.getLogger(PricingPage.class.getName());
 
     @FindBy(xpath = "//h1[normalize-space()='CRM Software Pricing']")
     WebElement PricingLogoMessage;

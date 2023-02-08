@@ -13,7 +13,7 @@ public class LoginPage extends CommonAPI {
 	public LoginPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-	Logger log = LogManager.getLogger(HomePage.class.getName());
+	Logger log = LogManager.getLogger(LoginPage.class.getName());
 
 	@FindBy(name="email")
 	WebElement emailAddress;

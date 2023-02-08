@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AccountSettingsPage extends CommonAPI {
     public AccountSettingsPage(WebDriver driver) {PageFactory.initElements(driver, this);}
-    Logger log = LogManager.getLogger(HomePage.class.getName());
+    Logger log = LogManager.getLogger(AccountSettingsPage.class.getName());
 
     @FindBy(xpath ="//a[normalize-space()='Accounts']")
     WebElement accountButton;
