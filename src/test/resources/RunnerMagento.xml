@@ -23,7 +23,6 @@
             <class name="tests.magento.SignOut"></class>
             <class name="tests.magento.ShoppingCart"></class>
             <class name="tests.magento.Checkout"></class>
-            <class name="tests.magento.TestSignInWithDB"></class>
 
         </classes>
     </test>

@@ -12,16 +12,18 @@ import pages.magento.SignInPage;
 
 public class MyAccountTest extends CommonAPI {
     Logger LOG = LogManager.getLogger(SearchBar.class.getName());
-    Faker fakeData = new Faker();
-    String emailAddress = fakeData.internet().emailAddress();
-    String password = fakeData.internet().password();
+//    Faker fakeData = new Faker();
+//    String emailAddress = fakeData.internet().emailAddress();
+//    String password = fakeData.internet().password();
     @Test
     public void myAccount() throws InterruptedException {
         HomePage homePage =new HomePage(getDriver());
         homePage.clickOnSignInButton();
 
         SignInPage signInPage= new SignInPage(getDriver());
-        signInPage.typeEmailAddress(emailAddress);
+        String email="leghzali@gmail.com";
+        signInPage.typeEmailAddress(email);
+        String password="@ISMAIL@leghzali@";
         signInPage.password(password);
         signInPage.SignInButton2();
 
@@ -30,28 +32,18 @@ public class MyAccountTest extends CommonAPI {
 
 
         MyAccount myAccount=new MyAccount(getDriver());
+        Thread.sleep(3000);
         myAccount.arrow();
         Thread.sleep(3000);
         myAccount.ClickOnMyAccount();
-        Thread.sleep(3000);
         myAccount.manageAddress();
-        Thread.sleep(3000);
         myAccount.addNewAddressBtn();
-        Thread.sleep(3000);
         myAccount.company();
-        Thread.sleep(5000);
         myAccount.phoneNum();
-        Thread.sleep(5000);
-//        myAccount.setCity();
-//        Thread.sleep(5000);
         myAccount.address();
-        Thread.sleep(5000);
         myAccount.province_state();
-        Thread.sleep(5000);
         myAccount.zipCode();
-        Thread.sleep(5000);
         myAccount.saveBtn();
-        Thread.sleep(5000);
         String successMsg="You saved the address.";
         Assert.assertEquals(successMsg,"You saved the address.");
         LOG.info("success msg show up");
@@ -62,11 +54,14 @@ public class MyAccountTest extends CommonAPI {
         homePage.clickOnSignInButton();
 
         SignInPage signInPage= new SignInPage(getDriver());
-        signInPage.typeEmailAddress(emailAddress);
+        String email="leghzali@gmail.com";
+        signInPage.typeEmailAddress(email);
+        String password="@ISMAIL@leghzali@";
         signInPage.password(password);
         signInPage.SignInButton2();
         MyAccount myAccount=new MyAccount(getDriver());
         myAccount.arrow();
+        Thread.sleep(3000);
         myAccount.ClickOnMyAccount();
         myAccount.accountInformation();
         myAccount.saveBtn();
@@ -80,14 +75,16 @@ public class MyAccountTest extends CommonAPI {
         homePage.clickOnSignInButton();
 
         SignInPage signInPage = new SignInPage(getDriver());
-        signInPage.typeEmailAddress(emailAddress);
+        String email="leghzali@gmail.com";
+        signInPage.typeEmailAddress(email);
+        String password="@ISMAIL@leghzali@";
         signInPage.password(password);
         signInPage.SignInButton2();
         MyAccount myAccount = new MyAccount(getDriver());
         myAccount.arrow();
         myAccount.ClickOnMyAccount();
         myAccount.myWishList();
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         myAccount.clickAddAllToCart();
         Thread.sleep(3000);
     }
@@ -97,7 +94,9 @@ public void shareWishList() throws InterruptedException {
     homePage.clickOnSignInButton();
 
     SignInPage signInPage = new SignInPage(getDriver());
-    signInPage.typeEmailAddress(emailAddress);
+        String email="leghzali@gmail.com";
+    signInPage.typeEmailAddress(email);
+      String password="@ISMAIL@leghzali@";
     signInPage.password(password);
     signInPage.SignInButton2();
     MyAccount myAccount = new MyAccount(getDriver());
@@ -106,7 +105,7 @@ public void shareWishList() throws InterruptedException {
     myAccount.myWishList();
     Thread.sleep(3000);
     myAccount.clickOnShareWishList();
-    Thread.sleep(3000);
+    Thread.sleep(4000);
     myAccount.emailsField();
     Thread.sleep(3000);
     myAccount.messageWish();

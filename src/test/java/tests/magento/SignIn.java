@@ -9,6 +9,9 @@ import org.testng.annotations.Test;
 import pages.magento.HomePage;
 import pages.magento.SignInPage;
 import utility.ConnectDB;
+import utility.ReadFromExcel;
+
+import java.io.File;
 
 public class SignIn extends CommonAPI {
 
@@ -35,8 +38,6 @@ public class SignIn extends CommonAPI {
             signInPage.password(password);
             signInPage.SignInButton2();
 
-
-
         String welcomeMessage = "Welcome, ismail leghzali! Change";
         Assert.assertEquals(welcomeMessage,"Welcome, ismail leghzali! Change");
         LOG.info("welcome user");
@@ -44,7 +45,7 @@ public class SignIn extends CommonAPI {
 
         }
 
-    @Test // sign in by reading from data base
+    @Test // sign in with correct credentials by reading from Data Base
 
     public void signInWithDB() throws InterruptedException {
         HomePage homePage= new HomePage(getDriver());
@@ -58,16 +59,17 @@ public class SignIn extends CommonAPI {
         LOG.info("land to home page success");
 
         homePage.clickOnSignInButton();
+
         String email = ConnectDB.getTableColumnData("select * from customer","CustomerEmail").get(0);
         signInPage.typeEmailAddress(email);
         String password = ConnectDB.getTableColumnData("select * from customer","CustomerPassword").get(0);
+
         signInPage.password(password);
         signInPage.SignInButton2();
+
         String welcomeMessage = "Welcome, ismail leghzali! Change";
         Assert.assertEquals(welcomeMessage,"Welcome, ismail leghzali! Change");
         LOG.info("welcome user");
-
-
     }
 
 
@@ -82,8 +84,7 @@ public class SignIn extends CommonAPI {
         signInPage.wrongCredEmail();
         signInPage.password(password);
         signInPage.SignInButton2();
-        Thread.sleep(3000);
-
+        Thread.sleep(1000);
 
         String errorMessage = signInPage.incorrectCred();
         Assert.assertEquals(errorMessage, "Incorrect CAPTCHA");
@@ -97,6 +98,7 @@ public class SignIn extends CommonAPI {
 
         //sign in with a fake email
         homePage.clickOnSignInButton();
+
         signInPage.fakeEmail();
         signInPage.password(password);
         signInPage.SignInButton2();
@@ -111,15 +113,36 @@ public class SignIn extends CommonAPI {
         signInPage.password(password);
         signInPage.captchaReload();
         signInPage.SignInButton2();
-        Thread.sleep(4000);
 
         String welcomeMessage = "Welcome, ismail leghzali! Change";
         Assert.assertEquals(welcomeMessage,"Welcome, ismail leghzali! Change");
         LOG.info("welcome user");
-
-
-
     }
+//    @Test //sign in using excel
+//    public void signInWithExcel() throws InterruptedException {
+//        HomePage homePage= new HomePage(getDriver());
+//        SignInPage signInPage = new SignInPage(getDriver());
+//
+//
+//        String title = getCurrentTitle();
+//        Assert.assertEquals(title,"Home Page - Magento eCommerce - website to practice selenium | demo website for automation testing" +
+//                " | selenium practice sites | selenium demo sites | best website to practice selenium automation | automation practice sites " +
+//                "Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
+//        LOG.info("land to home page success");
+//
+//        homePage.clickOnSignInButton();
+//
+//        String path = System.getProperty("user.dir") + File.separator + "data" + File.separator +"magento" + File.separator + "magento.xlsx";
+//        ReadFromExcel readFromExcel = new ReadFromExcel(path,"magentoFile");
+//        String Email = readFromExcel.getCellValueForGivenHeaderAndKey("key","email");
+//        signInPage.typeEmailAddress(Email);
+//        LOG.info("success");
+//        String Password = readFromExcel.getCellValueForGivenHeaderAndKey("key","password");
+//        signInPage.password(Password);
+//        LOG.info("success");
+//
+//
+//    }
 
 
 }

@@ -29,66 +29,48 @@ public class PurchaseTest extends CommonAPI {
     LOG.info("land to search hoodie page");
 
     searchPage.clickOnHoodiePicture();
-//    Thread.sleep(3000);
     String hoodieTitle= getCurrentTitle();
     Assert.assertEquals(hoodieTitle,"Bruno Compete Hoodie Magento Commerce - website to practice selenium | " +
             "demo website for automation testing | selenium practice sites");
 
     PurchasePage purchasePage = new PurchasePage(getDriver());
     purchasePage.clickOnSize();
-//    Thread.sleep(3000);
 
     purchasePage.ChooseColor();
-//    Thread.sleep(3000);
     purchasePage.typeOnQuantity();
-    Thread.sleep(3000);
 
     purchasePage.addItemToCart2();
-    Thread.sleep(3000);
     homePage.clickOnCartLink();
     String aadToCart="You added Bruno Compete Hoodie to your shopping cart.";
     Assert.assertEquals(aadToCart,"You added Bruno Compete Hoodie to your shopping cart.");
-    Thread.sleep(3000);
-
-//    String editCartTitle=getCurrentTitle();
-//    Assert.assertEquals(editCartTitle,"String cartTitle=getCurrentTitle();\n" +
-//            "    Assert.assertEquals(cartTitle,\"\");");
-//    LOG.info("land to edit cart page");
     }
     @Test //wish list
   public void wishList() throws InterruptedException {
     HomePage homePage=new HomePage(getDriver());
     String itemE="Cronus Yoga Pant";
     homePage.typeAndClickItemToSearch(itemE);
-    Thread.sleep(5000);
     PurchasePage purchasePage=new PurchasePage(getDriver());
     purchasePage.yogaClothes();
-//    String title="Sprite Yoga Companion Kit";
-//    Assert.assertEquals(title,"Sprite Yoga Companion Kit");
-//    LOG.info("land to Sprite Yoga Companion Kit as expected");
     purchasePage.clickOnWish();
     String message="You must login or register to add items to your wishlist.";
     Assert.assertEquals(message,"You must login or register to add items to your wishlist.");
         LOG.info("message as expected");
       SignInPage signInPage=new SignInPage(getDriver());
       String email="leghzali@gmail.com";
+      Thread.sleep(3000);
       signInPage.typeEmailAddress(email);
       String password="@ISMAIL@leghzali@";
       signInPage.password(password);
       signInPage.SignInButton2();
-      Thread.sleep(4000);
 
     }
     @Test //Add to compare
   public void addToCompare() throws InterruptedException {
       HomePage homePage=new HomePage(getDriver());
-        Thread.sleep(3000);
       String itemE="Cronus Yoga Pant";
-        Thread.sleep(4000);
+
       homePage.typeAndClickItemToSearch(itemE);
-        Thread.sleep(5000);
       PurchasePage purchasePage=new PurchasePage(getDriver());
-      Thread.sleep(5000);
       purchasePage.yogaClothes();
       purchasePage.clickOnCompare();
         String message="Harmony Lumaflex™ Strength Band Kit has been added to your Wish List. Click here to continue shopping.";
@@ -104,8 +86,8 @@ public class PurchaseTest extends CommonAPI {
     searchPage.clickOnHoodiePicture();
     PurchasePage purchasePage=new PurchasePage(getDriver());
     purchasePage.reviewItem();
-    Thread.sleep(5000);
-    purchasePage.rating();
+
+//    purchasePage.rating();
     purchasePage.reviewerName();
     purchasePage.reviewerSumm();
     purchasePage.review();

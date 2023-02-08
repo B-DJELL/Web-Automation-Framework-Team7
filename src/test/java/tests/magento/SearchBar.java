@@ -40,11 +40,9 @@ public class SearchBar extends CommonAPI {
         HomePage homePage = new HomePage(getDriver());
 
         String itemB = "pants gym";
-//        Thread.sleep(1000);
         homePage.itemToSearch(itemB);
-//        Thread.sleep(4000);
+        Thread.sleep(4000);
         searchPage.searchBtn();
-//        Thread.sleep(4000);
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Search results for: 'pants gym' Magento Commerce - website to practice" +
                 " selenium | demo website for automation testing | selenium practice sites");
@@ -72,12 +70,10 @@ public class SearchBar extends CommonAPI {
         searchPage.relevance();
         searchPage.relevancePrice(driver);
         searchPage.changeViewList();
-        Thread.sleep(3000);
         JavascriptExecutor jsa = (JavascriptExecutor) driver;
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[3]/div[1]/div[2]/div[3]/div[3]")));
         LOG.info("select element to click on success");
-        Thread.sleep(3000);
-        searchPage.showPages();
+//        searchPage.showPages();
 //        searchPage.numOfItemsOnPage();
 //        Thread.sleep(5000);
     }

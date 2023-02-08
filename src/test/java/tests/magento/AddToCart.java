@@ -38,10 +38,8 @@ public class AddToCart extends CommonAPI {
             homePage.clickOnWatches();
 
             purchasePage.hoverOverItem(driver);
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             purchasePage.addItemToCart();
-
-
     }
 
     }

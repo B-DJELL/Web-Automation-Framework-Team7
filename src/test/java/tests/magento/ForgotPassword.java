@@ -61,7 +61,7 @@ public class ForgotPassword extends CommonAPI {
         forgotPasswordPage.emailForRestoringPass(emailAddress);
         Thread.sleep(9000);
         signInPage.resetMyPasswordBtn();
-        Thread.sleep(9000);
+
 
 
 
