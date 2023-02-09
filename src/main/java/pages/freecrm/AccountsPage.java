@@ -34,6 +34,9 @@ public class AccountsPage extends CommonAPI {
     @FindBy(xpath = "//a[normalize-space()='Google Account']")
     WebElement GoogleAccountButton;
 
+    @FindBy(xpath = "//a[normalize-space()='Facebook Account']")
+    WebElement FacebookAccountButton;
+
     @FindBy(xpath = "//a[normalize-space()='QuickBooks']")
     WebElement QuickBooksButton;
 
@@ -68,6 +71,6 @@ public class AccountsPage extends CommonAPI {
     public void clickOnGoogleAccountButton(){
         clickOn(GoogleAccountButton);
     }
-
+    public void clickOnFacebookAccountButton(){clickOn(FacebookAccountButton);}
 
 }

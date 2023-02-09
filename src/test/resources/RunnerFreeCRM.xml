@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="freeCrm">
+    <parameter name="useCloudEnv" value="false"></parameter>
+    <parameter name="envName" value="browserstack"></parameter>
+    <parameter name="os" value="windows"></parameter>
+    <parameter name="osVersion" value="11"></parameter>
+    <parameter name="browserVersion" value="109"></parameter>
+
     <parameter name="browserName" value="chrome"></parameter>
     <parameter name="url" value="https://ui.freecrm.com/"></parameter>
     <test name="test">
@@ -14,7 +20,6 @@
             <class name="tests.freecrm.DeleteContactTest"></class>
             <class name="tests.freecrm.ProductsTest"></class>
             <class name="tests.freecrm.AccountsTest"></class>
-
 
             <!--            <class name="tests.freecrm.MainPageTest"></class>-->
 
