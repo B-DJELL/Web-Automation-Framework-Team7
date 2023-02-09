@@ -100,7 +100,7 @@
                     <suiteXmlFiles>
 
                         <suiteXmlFile>src\test\resources\RunnerFreeCRM.xml</suiteXmlFile>
-<!--                        <suiteXmlFile>src/test/resources/RunnerMagento.xml</suiteXmlFile>-->
+                        <suiteXmlFile>src/test/resources/RunnerMagento.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/RunnerNopCommerce.xml</suiteXmlFile>
 
                     </suiteXmlFiles>
