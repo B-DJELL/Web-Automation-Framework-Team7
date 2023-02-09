@@ -60,9 +60,9 @@ public class SignIn extends CommonAPI {
 
         homePage.clickOnSignInButton();
 
-        String email = ConnectDB.getTableColumnData("select * from customer","CustomerEmail").get(0);
+        String email = ConnectDB.getTableColumnData("select * from client","CustomerEmail").get(0);
         signInPage.typeEmailAddress(email);
-        String password = ConnectDB.getTableColumnData("select * from customer","CustomerPassword").get(0);
+        String password = ConnectDB.getTableColumnData("select * from client","CustomerPassword").get(0);
 
         signInPage.password(password);
         signInPage.SignInButton2();
