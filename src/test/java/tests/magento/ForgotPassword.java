@@ -22,14 +22,11 @@ public class ForgotPassword extends CommonAPI {
     public void forgotPassword() throws InterruptedException {
         HomePage homePage = new HomePage(getDriver());
         homePage.clickOnSignInButton();
-        Thread.sleep(3000);
 
 
         SignInPage signInPage = new SignInPage(getDriver());
-        Thread.sleep(3000);
 
         signInPage.forgotPassword();
-        Thread.sleep(3000);
         String forgotPassword =getCurrentTitle();
         Assert.assertEquals(forgotPassword,"Forgot Your Password? Magento Commerce - website to practice" +
                 " selenium | demo website for automation testing | selenium practice sites");
@@ -37,24 +34,20 @@ public class ForgotPassword extends CommonAPI {
 
         ForgotPasswordPage forgotPasswordPage=new ForgotPasswordPage(getDriver());
         forgotPasswordPage.emailForRestoringPass(emailAddress);
-        Thread.sleep(3000);
         signInPage.resetMyPasswordBtn();
-        Thread.sleep(3000);
         String error= signInPage.getRequiredField();
         Assert.assertEquals(error,"This is a required field.");
         LOG.info("error message shows up");
-        Thread.sleep(3000);
 
     }
     @Test
     public void forgotPasswordPass() throws InterruptedException {
         HomePage homePage = new HomePage(getDriver());
         homePage.clickOnSignInButton();
-        Thread.sleep(3000);
+
 
 
         SignInPage signInPage = new SignInPage(getDriver());
-        Thread.sleep(3000);
 
         signInPage.forgotPassword();
         ForgotPasswordPage forgotPasswordPage=new ForgotPasswordPage(getDriver());

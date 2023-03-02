@@ -32,16 +32,12 @@ public class Checkout extends CommonAPI {
     homePage.clickOnCartLink();
 
     checkoutPage.clickOnCheckoutButton();
-    Thread.sleep(1000);
 
     checkoutPage.emailAddress();
-    Thread.sleep(2000);
     checkoutPage.enterPassword();
     checkoutPage.logIn();
-    Thread.sleep(1000);
     checkoutPage.shippingMethod();
     checkoutPage.clickNext();
-    Thread.sleep(3000);
     checkoutPage.clickPlaceOrder();
 
     String message ="Thank you for your purchase!";
@@ -62,19 +58,15 @@ public class Checkout extends CommonAPI {
         homePage.clickOnWatches();
 
         purchasePage.hoverOverItem(driver);
-        Thread.sleep(3000);
         purchasePage.addItemToCart();
         homePage.clickOnCartLink();
 
         checkoutPage.clickOnCheckoutButton();
-        Thread.sleep(1000);
         checkoutPage.emailAddress();
         checkoutPage.enterPassword();
         checkoutPage.logIn();
-        Thread.sleep(1000);
         checkoutPage.shippingMethod();
         checkoutPage.clickNext();
-        Thread.sleep(3000);
         checkoutPage.clickPlaceOrder();
 
         String message ="Thank you for your purchase!";

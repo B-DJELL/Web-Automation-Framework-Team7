@@ -74,7 +74,7 @@ public class SignIn extends CommonAPI {
 
 
     @Test   //Testing wrong credentials
-    public void b_wrongCredentials () throws InterruptedException {
+    public void wrongCredentials () throws InterruptedException {
         HomePage homePage = new HomePage(getDriver());
         SignInPage signInPage = new SignInPage(getDriver());
         LOG.info("land to home page success");
@@ -118,31 +118,31 @@ public class SignIn extends CommonAPI {
         Assert.assertEquals(welcomeMessage,"Welcome, ismail leghzali! Change");
         LOG.info("welcome user");
     }
-//    @Test //sign in using excel
-//    public void signInWithExcel() throws InterruptedException {
-//        HomePage homePage= new HomePage(getDriver());
-//        SignInPage signInPage = new SignInPage(getDriver());
-//
-//
-//        String title = getCurrentTitle();
-//        Assert.assertEquals(title,"Home Page - Magento eCommerce - website to practice selenium | demo website for automation testing" +
-//                " | selenium practice sites | selenium demo sites | best website to practice selenium automation | automation practice sites " +
-//                "Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
-//        LOG.info("land to home page success");
-//
-//        homePage.clickOnSignInButton();
-//
-//        String path = System.getProperty("user.dir") + File.separator + "data" + File.separator +"magento" + File.separator + "magento.xlsx";
-//        ReadFromExcel readFromExcel = new ReadFromExcel(path,"magentoFile");
-//        String Email = readFromExcel.getCellValueForGivenHeaderAndKey("key","email");
-//        signInPage.typeEmailAddress(Email);
-//        LOG.info("success");
-//        String Password = readFromExcel.getCellValueForGivenHeaderAndKey("key","password");
-//        signInPage.password(Password);
-//        LOG.info("success");
-//
-//
-//    }
+    @Test //sign in using excel
+    public void signInWithInvalidPass() throws InterruptedException {
+        HomePage homePage= new HomePage(getDriver());
+        SignInPage signInPage = new SignInPage(getDriver());
+
+
+        String title = getCurrentTitle();
+        Assert.assertEquals(title,"Home Page - Magento eCommerce - website to practice selenium | demo website for automation testing" +
+                " | selenium practice sites | selenium demo sites | best website to practice selenium automation | automation practice sites " +
+                "Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
+        LOG.info("land to home page success");
+
+        homePage.clickOnSignInButton();
+
+        String path = System.getProperty("user.dir") + File.separator + "data" + File.separator +"magento" + File.separator + "magento.xlsx";
+        ReadFromExcel readFromExcel = new ReadFromExcel(path,"magentoFile");
+        String Email = readFromExcel.getCellValueForGivenHeaderAndKey("key","email");
+        signInPage.typeEmailAddress(Email);
+        LOG.info("success");
+        String Password = readFromExcel.getCellValueForGivenHeaderAndKey("key","password");
+        signInPage.password(Password);
+        LOG.info("success");
+
+
+    }
 
 
 }

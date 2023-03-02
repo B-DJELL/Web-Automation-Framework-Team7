@@ -17,49 +17,49 @@ public class SearchBar extends CommonAPI {
     Logger LOG = LogManager.getLogger(SearchBar.class.getName());
 
 
-//    @Test // testing the search bar
-//    public void searchBar() throws InterruptedException {
-//
-//        String actualHomePageTitle = getCurrentTitle();
-//        String expectedHomePageTitle = actualHomePageTitle;
-//        LOG.info("actual home page title" + actualHomePageTitle);
-//        Assert.assertEquals(actualHomePageTitle, expectedHomePageTitle);
-//        LOG.info("land to luma home page success");
-//
-//        String item = "hoodie";
-//        HomePage homePage = new HomePage(getDriver());
-//        homePage.typeAndClickItemToSearch(item);
-//
-//        SearchPage searchPage = new SearchPage(getDriver());
-//        searchPage.clickOnHoodiePicture();
-//    }
-//
-//    @Test // testing the search button
-//    public void searchIcon() throws InterruptedException {
-//        SearchPage searchPage = new SearchPage(getDriver());
-//        HomePage homePage = new HomePage(getDriver());
-//
-//        String itemB = "pants gym";
-//        homePage.itemToSearch(itemB);
-//        Thread.sleep(4000);
-//        searchPage.searchBtn();
-//        String title = getCurrentTitle();
-//        Assert.assertEquals(title, "Search results for: 'pants gym' Magento Commerce - website to practice" +
-//                " selenium | demo website for automation testing | selenium practice sites");
-//        LOG.info("land to result page");
-//    }
-//
-//    @Test // testing unfound items
-//    public void unFoundItem() throws InterruptedException {
-//        HomePage homePage = new HomePage(getDriver());
-//        SearchPage searchPage = new SearchPage(getDriver());
-//
-//        String itemC = "Milk";
-//        homePage.typeAndClickItemToSearch(itemC);
-//        String resultErrorMessage = "Your search returned no results.";
-//        Assert.assertEquals(resultErrorMessage, "Your search returned no results.");
-//        LOG.info("error message show up");
-//    }
+    @Test // testing the search bar
+    public void searchBar() throws InterruptedException {
+
+        String actualHomePageTitle = getCurrentTitle();
+        String expectedHomePageTitle = actualHomePageTitle;
+        LOG.info("actual home page title" + actualHomePageTitle);
+        Assert.assertEquals(actualHomePageTitle, expectedHomePageTitle);
+        LOG.info("land to luma home page success");
+
+        String item = "hoodie";
+        HomePage homePage = new HomePage(getDriver());
+        homePage.typeAndClickItemToSearch(item);
+
+        SearchPage searchPage = new SearchPage(getDriver());
+        searchPage.clickOnHoodiePicture();
+    }
+
+    @Test // testing the search button
+    public void searchIcon() throws InterruptedException {
+        SearchPage searchPage = new SearchPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
+
+        String itemB = "pants gym";
+        homePage.itemToSearch(itemB);
+        Thread.sleep(4000);
+        searchPage.searchBtn();
+        String title = getCurrentTitle();
+        Assert.assertEquals(title, "Search results for: 'pants gym' Magento Commerce - website to practice" +
+                " selenium | demo website for automation testing | selenium practice sites");
+        LOG.info("land to result page");
+    }
+
+    @Test // testing unfound items
+    public void unFoundItem() throws InterruptedException {
+        HomePage homePage = new HomePage(getDriver());
+        SearchPage searchPage = new SearchPage(getDriver());
+
+        String itemC = "Milk";
+        homePage.typeAndClickItemToSearch(itemC);
+        String resultErrorMessage = "Your search returned no results.";
+        Assert.assertEquals(resultErrorMessage, "Your search returned no results.");
+        LOG.info("error message show up");
+    }
 
     @Test // testing other search view
     public void searchView() throws InterruptedException {
@@ -75,7 +75,6 @@ public class SearchBar extends CommonAPI {
         LOG.info("select element to click on success");
 //        searchPage.showPages();
 //        searchPage.numOfItemsOnPage();
-//        Thread.sleep(5000);
     }
     @Test
     public void moveToNextPage() throws InterruptedException {
